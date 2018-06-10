@@ -2,16 +2,16 @@ require 'io/console'
 require 'json'
 
 # Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
-%w[parser logging smalllibrarian].each do |r|
+%w[parser logging uncomplicatedarchivist].each do |r|
   require_relative r
 end
 
-module SmallLibrarian
+module UncomplicatedLibrarian
   class Cli
     def initialize()
-      @parser = SmallLibrarian::Parser.new()
+      @parser = UncomplicatedLibrarian::Parser.new()
       @options = @parser.options
-      @small_librarian = SmallLibrarian::Librarian.new(@parser.options, @parser.grab_collections)
+      @small_librarian = UncomplicatedLibrarian::Librarian.new(@parser.options, @parser.grab_collections)
     end
   end
 end

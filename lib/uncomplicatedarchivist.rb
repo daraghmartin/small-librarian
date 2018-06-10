@@ -1,7 +1,7 @@
 require 'fileutils'
 require 'logger'
 
-module SmallLibrarian
+module UncomplicatedLibrarian
   class Librarian
     include Logging
     def initialize(options = {}, grab_collections = {})

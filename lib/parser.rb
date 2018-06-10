@@ -1,13 +1,13 @@
 require 'optparse'
 require 'yaml'
 
-module SmallLibrarian
+module UncomplicatedLibrarian
   class Parser
     attr_accessor :options, :grab_collections
 
     def initialize(options = {})
       @options = options
-      config_location = @options[:config_location] = ENV['CONFIG_LOCATION'] || 'config/small-librarian.yml'
+      config_location = @options[:config_location] = ENV['CONFIG_LOCATION'] || 'config/uncomplicated-librarian.yml'
 
       if File.file? @options[:config_location]
         @options = YAML.load_file(config_location)
@@ -22,7 +22,9 @@ module SmallLibrarian
         end
       end.parse!
 
-      @options[:collection_config_location] = @options[:collection_config_location] || ENV['COLLECTION_CONFIG_LOCATION'] || 'config/small-librarian-collections.yml'
+      @options[:collection_config_location] = @options[:collection_config_location] || ENV['COLLECTION_CONFIG_LOCATION'] || 'config/uncomplicated-librarian-collections.yml'
+
+      raise "No Collection File at @options[:collection_config_location]" unless File.file? @options[:collection_config_location]
 
       @grab_collections = YAML.load_file(@options[:collection_config_location])
 
