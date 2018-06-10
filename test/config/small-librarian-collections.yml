@@ -1,0 +1,25 @@
+---
+  - :name: some file location
+    :source: file
+    :grabs:
+      - :files:
+          test/src/star/rb/*.rb:   test/dest/test/star/rb
+          test/src/star/y/*/*.rb:  test/dest/test/star/y
+          test/src/star/star/*:    test/dest/test/star/star
+          test/src/config/test1:   test/dest/test/files
+          test/src/config/test2:   test/dest/test/files/
+          test/src/config/test3:   test/dest/test/files/test3
+  - :name: cfn repo
+    :source: git
+    :git: github/cfn-repo
+    :grabs:
+      - :branch: master
+        :files:
+          sample/file1: cfndsl/file1
+      - :tag: 0.1.0
+        :files:
+          sample/ci-build/jm.rb:   cfndsl/jm.rb
+          lib/*:                   cfndsl
+      - :sha: 123
+        :files:
+          config/x                 cfndsl/x

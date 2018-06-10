@@ -1,0 +1,3 @@
+test/dest/test*
+local_defaults.yml
+#test/src/*

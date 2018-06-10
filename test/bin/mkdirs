@@ -1,0 +1,11 @@
+#!/bin/bash
+
+dirs="test/dest/test/star
+test/dest/test/star/rb
+test/dest/test/star/star
+test/dest/test/star/y
+test/dest/test/files"
+
+for d in $dirs; do
+  mkdir -p $d
+done
