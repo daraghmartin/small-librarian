@@ -4,7 +4,10 @@ dirs="test/dest/test/star
 test/dest/test/star/rb
 test/dest/test/star/star
 test/dest/test/star/y
-test/dest/test/files"
+test/dest/test/files
+test/dest/test/lib
+test/dest/test/cfn
+test/dest/test/snippets"
 
 for d in $dirs; do
   mkdir -p $d

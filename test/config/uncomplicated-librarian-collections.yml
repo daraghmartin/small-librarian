@@ -1,4 +1,4 @@
----
+:uncomplicated_archivist_collections:
   - :name: some file location
     :source: file
     :grabs:
@@ -9,17 +9,19 @@
           test/src/config/test1:   test/dest/test/files
           test/src/config/test2:   test/dest/test/files/
           test/src/config/test3:   test/dest/test/files/test3
-  - :name: cfn repo
+  - :name: cfn files repo
     :source: git
-    :git: github/cfn-repo
+    :repository: https://github.com/daraghmartin/cfn-files.git
+    :local_name: cfn-files
     :grabs:
       - :branch: master
         :files:
-          sample/file1: cfndsl/file1
-      - :tag: 0.1.0
-        :files:
-          sample/ci-build/jm.rb:   cfndsl/jm.rb
-          lib/*:                   cfndsl
-      - :sha: 123
-        :files:
-          config/x                 cfndsl/x
+          lib-files/*:                 test/dest/test/lib
+          ci-stack/jenkins-master.rb:  test/dest/test/cfn/jm.rb
+      # - :tag: 0.1.0
+      #   :files:
+      #     sample/ci-build/jm.rb:   cfndsl/jm.rb
+      #     lib/*:                   cfndsl
+      # - :sha: 123
+      #   :files:
+      #     config/x                 cfndsl/x
